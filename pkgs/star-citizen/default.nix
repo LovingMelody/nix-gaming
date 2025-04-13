@@ -8,6 +8,8 @@
   winetricks,
   wine,
   dxvk,
+  p7zip,
+  stdenvNoCC,
   umu-launcher,
   proton-ge-bin,
   wineFlags ? "",
@@ -151,26 +153,47 @@
     ${postCommands}
   '';
 
-  icon = pkgs.fetchurl {
-    # Source: https://lutris.net/games/icon/star-citizen.png
-    url = "https://github-production-user-asset-6210df.s3.amazonaws.com/17859309/255031314-2fac3a8d-a927-4aa9-a9ad-1c3e14466c20.png";
-    hash = "sha256-19A1DyLQQcXQvVi8vW/ml+epF3WRlU5jTmI4nBaARF0=";
+  icon = stdenvNoCC.mkDerivation {
+    inherit src version;
+    name = "rsi-launcher-icon";
+
+    dontConfigure = false;
+    dontBuild = true;
+    dontFixup = true;
+    dontStrip = true;
+    dontPatchELF = true;
+
+    nativeBuildInputs = [p7zip];
+    unpackPhase = ''
+      7z e -y $src app-64.7z -r
+      7z e -y app-64.7z RSI\ Launcher.exe -r
+      7z e -y RSI\ Launcher.exe 1.ico 2.ico 3.ico 4.ico -r
+    '';
+    installPhase = ''
+      install -D -m644 1.ico $out/share/icons/hicolor/16x16/apps/rsi-launcher.ico
+      install -D -m644 2.ico $out/share/icons/hicolor/32x32/apps/rsi-launcher.ico
+      install -D -m644 3.ico $out/share/icons/hicolor/48x48/apps/rsi-launcher.ico
+      install -D -m644 4.ico $out/share/icons/hicolor/256x256/apps/rsi-launcher.ico
+    '';
   };
 
-  desktopItems = makeDesktopItem {
-    name = pname;
-    exec = "${script}/bin/${pname} %U";
-    inherit icon;
-    comment = "Star Citizen - Alpha";
-    desktopName = "Star Citizen";
-    categories = ["Game"];
-    mimeTypes = ["application/x-star-citizen-launcher"];
-  };
+  desktopItems =
+    makeDesktopItem
+    {
+      name = pname;
+      exec = "${script}/bin/${pname} %U";
+      icon = "rsi-launcher";
+      comment = "Roberts Space Industries";
+      desktopName = "RSI Launcher";
+      categories = ["Game"];
+      mimeTypes = ["application/x-star-citizen-launcher"];
+    };
 in
   symlinkJoin {
     name = pname;
     paths = [
       desktopItems
+      icon
       script
     ];
 
