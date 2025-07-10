@@ -41,6 +41,7 @@
   libs = with pkgs; [freetype vulkan-loader];
 
   script = writeShellScriptBin pname ''
+    set -xu
     export WINETRICKS_LATEST_VERSION_CHECK=disabled
     export WINEARCH="win64"
     mkdir -p "${location}"
@@ -90,7 +91,7 @@
       then ''
         export PROTON_VERBS="${concatStringsSep "," protonVerbs}"
         export PROTONPATH="${protonPath}"
-        if [ ! -f "$RSI_LAUNCHER" ]; then umu-run "${src}" /S; fi
+        if [ ! -f "$RSI_LAUNCHER" ] || [ "${"\${1:-}"}"  = "--force-install" ]; then umu-run "${src}" /S; fi
       ''
       else ''
         # Ensure all tricks are installed
@@ -113,7 +114,7 @@
           wineserver -k
         fi
 
-        if [ ! -e "$RSI_LAUNCHER" ]; then
+        if [ ! -e "$RSI_LAUNCHER" ] || [ "${"\${1:-}"}"  = "--force-install" ]; then
           mkdir -p "$WINEPREFIX/drive_c/Program Files/Roberts Space Industries/StarCitizen/"{LIVE,PTU}
 
           # install launcher using silent install
@@ -130,6 +131,7 @@
     cd "$WINEPREFIX"
 
     if [ "${"\${1:-}"}"  = "--shell" ]; then
+       set +xu
       echo "Entered Shell for star-citizen"
       exec ${lib.getExe pkgs.bash};
     fi
