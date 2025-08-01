@@ -121,13 +121,16 @@
 
       rocket-league = pkgs.callPackage ./rocket-league {wine = config.packages.wine-tkg;};
 
-      star-citizen = pkgs.callPackage ./star-citizen {
+      star-citizen-unwrapped = pkgs.callPackage ./star-citizen {
         wine = config.packages.wine-tkg;
         winetricks = config.packages.winetricks-git;
 
         inherit (config.packages) umu-launcher wineprefix-preparer;
       };
-      star-citizen-umu = config.packages.star-citizen.override {useUmu = true;};
+      star-citizen-umu = config.packages.star-citizen-unwrapped.override {useUmu = true;};
+      star-citizen = pkgs.callPackage ./star-citizen/wrapped.nix {
+        inherit (config.packages) star-citizen-unwrapped dxvk-nvapi-vkreflex-layer;
+      };
 
       technic-launcher = pkgs.callPackage ./technic-launcher {};
 
