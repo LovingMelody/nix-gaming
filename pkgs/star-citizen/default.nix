@@ -25,6 +25,7 @@
   glCacheSize ? 10737418240, # 10GB
   disableEac ? false,
   pkgs,
+  ...
 }: let
   inherit (lib.strings) concatStringsSep optionalString toShellVars;
   info = builtins.fromJSON (builtins.readFile ./info.json);
@@ -189,6 +190,7 @@ in
       desktopItems
       script
     ];
+    inherit version;
 
     meta = {
       description = "Star Citizen installer and launcher";
@@ -196,5 +198,6 @@ in
       license = lib.licenses.unfree;
       maintainers = with lib.maintainers; [fuzen];
       platforms = ["x86_64-linux"];
+      mainProgram = pname;
     };
   }
