@@ -1,0 +1,57 @@
+diff --git a/non-makepkg-build.sh b/non-makepkg-build.sh
+index 83045429..89d266f4 100755
+--- a/non-makepkg-build.sh
++++ b/non-makepkg-build.sh
+@@ -40,7 +40,7 @@
+ # ===========================================================================================================================================================================
+ 
+ pkgname=wine-tkg
+-_build_in_tmpfs="true"
++_build_in_tmpfs="false"
+ _esyncsrcdir='esync'
+ _where="$PWD" # Track the base directory as different Arch-based distros are moving srcdir around
+ 
+@@ -123,13 +123,7 @@ _src_init() {
+ 
+     # Wine staging update and checkout
+     cd "$_where"/"${_stgsrcdir}"
+-    if [[ "${_stgsrctarget}" != "$(git config --get remote.origin.url)" ]]; then
+-      echo "${_stgsrcdir} is not a clone of $(git config --get remote.origin.url) (\"${_stgsrctarget}\"). Let's nuke stuff to get back on track, hopefully." >>"$_where"/prepare.log
+-      rm -rf "$_where/${_stgsrcdir}" && rm -rf "${srcdir}/${_stgsrcdir}"
+-      warning "Your ${_stgsrcdir} clone was deleted due to remote mismatch (\"${_stgsrctarget}\" differs from \"$(git config --get remote.origin.url)\"). Let's try again with a fresh clone."
+-      _src_init
+-    fi
+-    git fetch --all -p
++    git fetch --all -p || true
+     rm -rf "${srcdir}/${_stgsrcdir}" && git clone "$_where"/"${_stgsrcdir}" "${srcdir}/${_stgsrcdir}"
+     cd "${srcdir}"/"${_stgsrcdir}"
+     git -c advice.detachedHead=false checkout --force --no-track -B makepkg origin/HEAD
+@@ -139,13 +133,7 @@ _src_init() {
+ 
+     # Wine update and checkout
+     cd "$_where"/"${_winesrcdir}"
+-    if [[ "${_winesrctarget}" != "$(git config --get remote.origin.url)" ]]; then
+-      echo "${_winesrcdir} is not a clone of $(git config --get remote.origin.url) (\"${_winesrctarget}\"). Let's nuke stuff to get back on track, hopefully." >>"$_where"/prepare.log
+-      rm -rf "$_where/${_winesrcdir}" && rm -rf "${srcdir}/${_winesrcdir}"
+-      warning "Your ${_winesrcdir} clone was deleted due to remote mismatch (\"${_winesrctarget}\" differs from \"$(git config --get remote.origin.url)\"). Let's try again with a fresh clone."
+-      _src_init
+-    fi
+-    git fetch --all -p
++    git fetch --all -p || true
+     rm -rf "${srcdir}/${_winesrcdir}" && git clone "$_where"/"${_winesrcdir}" "${srcdir}/${_winesrcdir}"
+     cd "${srcdir}"/"${_winesrcdir}"
+     git -c advice.detachedHead=false checkout --force --no-track -B makepkg origin/HEAD
+@@ -176,13 +164,6 @@ _script_init() {
+   _init
+ 
+   # Set the srcdir, Arch Linux style
+-  if [ "$_build_in_tmpfs" = "true" ]; then
+-    rm -rf "$_where"/src
+-    mkdir -p /tmp/wine-tkg/src
+-    ln -s /tmp/wine-tkg/src "$_where"
+-  else
+-    mkdir -p "$_where"/src
+-  fi
+   srcdir="$_where"/src
+ 
+   # dependencies

@@ -160,6 +160,8 @@
 
       wine-tkg = wineBuilder "wine-tkg" "full" {};
 
+      wine-tkg-git = pkgs.callPackage ./wine-tkg {inherit pins;};
+
       wine-tkg-ntsync = wineBuilder "wine-tkg-ntsync" "full" {};
 
       winetricks-git = pkgs.callPackage ./winetricks-git {inherit pins;};
