@@ -11,10 +11,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v2025.7.1",
-      "revision": "7b26178d90a35053f718ebfd4288c7a8ec525396",
-      "url": "https://api.github.com/repos/FAForever/downlords-faf-client/tarball/v2025.7.1",
-      "hash": "sha256-O9ix489XouxvIxarhkF8gc7e4NWeqH5zqRdUNrhdBEs="
+      "version": "v2025.9.2",
+      "revision": "a1991c77146ea5423eaa683a6e4133080353677b",
+      "url": "https://api.github.com/repos/FAForever/downlords-faf-client/tarball/refs/tags/v2025.9.2",
+      "hash": "sha256-34cqxIhsGPrzh88mMu32nonI5L6JTnXMSo9tNN22Hhk="
     },
     "downlords-faf-client-unstable": {
       "type": "GitRelease",
@@ -27,10 +27,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v2025.7.1",
-      "revision": "7b26178d90a35053f718ebfd4288c7a8ec525396",
-      "url": "https://api.github.com/repos/FAForever/downlords-faf-client/tarball/v2025.7.1",
-      "hash": "sha256-O9ix489XouxvIxarhkF8gc7e4NWeqH5zqRdUNrhdBEs="
+      "version": "v2025.9.3-alpha-1",
+      "revision": "89bbc41f1d5f422ab505d5abb49d0c803247aaf0",
+      "url": "https://api.github.com/repos/FAForever/downlords-faf-client/tarball/refs/tags/v2025.9.3-alpha-1",
+      "hash": "sha256-KbAawMMqG8q0eFn+RbbDKgzEvi4GcpbKljzDDVfht6w="
     },
     "dxvk": {
       "type": "GitRelease",
@@ -43,10 +43,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": true,
-      "version": "v2.7",
-      "revision": "0b621361c2b735c86b30940f62b3cf07ef18da1c",
+      "version": "v2.7.1",
+      "revision": "ab3631f80d9cd493676d4342bf614028c72e7484",
       "url": null,
-      "hash": "sha256-+wH7RStFnSGvinjPLbBBPWEONwnITCCTrkt/Rs7CPZ0=",
+      "hash": "sha256-c4QlFCUH5SdXT4J3jTGQBAgFXFD8waTjvLUePLAdpFs=",
       "frozen": true
     },
     "dxvk-gplasync": {
@@ -60,10 +60,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v2.7-1",
-      "revision": "aad948e38206fd9d7f080ba9f102f2e8c1ba0aaa",
-      "url": "https://gitlab.com/api/v4/projects/Ph42oN%2Fdxvk-gplasync/repository/archive.tar.gz?sha=v2.7-1",
-      "hash": "sha256-WVjuQOT9WBtKrMLvi4adyL70QB7GReWWUsUaFew598g="
+      "version": "v2.7.1-1",
+      "revision": "209a3069a19d13efb019e111f27114c185e86092",
+      "url": "https://gitlab.com/api/v4/projects/Ph42oN%2Fdxvk-gplasync/repository/archive.tar.gz?sha=v2.7.1-1",
+      "hash": "sha256-O2J37Pq3bdGbyl5GyTn6kmo6g9ID39ab6T2JW0OlhvA="
     },
     "dxvk-nvapi": {
       "type": "GitRelease",
@@ -122,9 +122,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "afa9fe50cb0bff9ba7e9f7796892f71722b2180d",
-      "url": "https://github.com/andir/npins/archive/afa9fe50cb0bff9ba7e9f7796892f71722b2180d.tar.gz",
-      "hash": "sha256-D6dYAMk9eYpBriE07s8Q7M3WBT7uM9pz3RKIoNk+h7I=",
+      "revision": "e49bcf58d66fa7f586aff687feae72c23e429672",
+      "url": "https://github.com/andir/npins/archive/e49bcf58d66fa7f586aff687feae72c23e429672.tar.gz",
+      "hash": "sha256-ZLrVWa7WU+IUXPAd6mR7B9c6FDZSiGgW8ClfW0SxbMs=",
       "frozen": true
     },
     "proton-osu": {
@@ -166,9 +166,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "214514f3b5ce336057e7b317dc0a1d5a9d0c0053",
-      "url": "https://github.com/Open-Wine-Components/umu-launcher/archive/214514f3b5ce336057e7b317dc0a1d5a9d0c0053.tar.gz",
-      "hash": "sha256-Vp2pKLJHaaTciDXv9mmVi0oUEGrojmd8DUKRxn9Y7Ow="
+      "revision": "79a8a7b7312042c44d68533b56fe13c207e4b87e",
+      "url": "https://github.com/Open-Wine-Components/umu-launcher/archive/79a8a7b7312042c44d68533b56fe13c207e4b87e.tar.gz",
+      "hash": "sha256-//xAEWefdIo6tk9S1OmCJi2sWCOloivbQJ8rSxoub8I="
     },
     "vkd3d-proton": {
       "type": "GitRelease",
@@ -193,11 +193,11 @@
         "owner": "CachyOS",
         "repo": "wine-cachyos"
       },
-      "branch": "cachyos_10.0_20250714/main",
+      "branch": "cachyos_10.0_20251015/main",
       "submodules": false,
-      "revision": "64a53635e60e728e4831c504f05ba2bd9702785c",
-      "url": "https://github.com/CachyOS/wine-cachyos/archive/64a53635e60e728e4831c504f05ba2bd9702785c.tar.gz",
-      "hash": "sha256-+/fAB9Wj4HzEQ5VpiISvTLPpUKbVC2pCBT7qdtSBn70=",
+      "revision": "fe527db75541057e11e048808eca9c3b42d99caa",
+      "url": "https://github.com/CachyOS/wine-cachyos/archive/fe527db75541057e11e048808eca9c3b42d99caa.tar.gz",
+      "hash": "sha256-AMoLzfUSEVdjYaebTWC5HD/G4nofq1lUmNJIMYbfZME=",
       "frozen": true
     },
     "wine-discord-ipc-bridge": {
@@ -216,22 +216,6 @@
       "url": "https://api.github.com/repos/0e4ef622/wine-discord-ipc-bridge/tarball/v0.0.3",
       "hash": "sha256-jzsbOKMakNQ6RNMlioX088fGzFBDxOP45Atlsfm2RKg="
     },
-    "wine-mono": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "wine-mono",
-        "repo": "wine-mono"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": "wine-mono-",
-      "submodules": false,
-      "version": "wine-mono-10.1.0",
-      "revision": "6b762029248bdcebf998b9d57d4014cd2661e812",
-      "url": "https://api.github.com/repos/wine-mono/wine-mono/tarball/wine-mono-10.1.0",
-      "hash": "sha256-UhpIk+PhWLkHxlXuiC1aBHhcRiR9d5gtwnK/Ic0qd08="
-    },
     "wine-tkg": {
       "type": "Git",
       "repository": {
@@ -241,22 +225,9 @@
       },
       "branch": "wow64",
       "submodules": false,
-      "revision": "95c6eed3b8879b123d1590c35b4472256605239c",
-      "url": "https://github.com/Kron4ek/wine-tkg/archive/95c6eed3b8879b123d1590c35b4472256605239c.tar.gz",
-      "hash": "sha256-ZN0sJ0oieIfngcu6zH12jZ3Z/6Kmw2oBwoIqrFevgrI="
-    },
-    "wine-tkg-ntsync": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Kron4ek",
-        "repo": "wine-tkg"
-      },
-      "branch": "ntsync",
-      "submodules": false,
-      "revision": "2a59efcc00604b4082bed837c5a78676d5c585cd",
-      "url": "https://github.com/Kron4ek/wine-tkg/archive/2a59efcc00604b4082bed837c5a78676d5c585cd.tar.gz",
-      "hash": "sha256-qkqdz5XyZf8kBOJK6O1HtIbzqoj5sF5IzU+EOoj+ygw="
+      "revision": "c2e0a14b32813b400e7b5bf10ec740e8e6d879f1",
+      "url": "https://github.com/Kron4ek/wine-tkg/archive/c2e0a14b32813b400e7b5bf10ec740e8e6d879f1.tar.gz",
+      "hash": "sha256-ywlTLB8CbP1W9mNzN9iN1e1Tbg2OV9HYx2ReDxuFiBs="
     },
     "winetricks": {
       "type": "Git",
@@ -267,9 +238,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "9006a3663212c11cd2c491c47cd9d95ba38fe29c",
-      "url": "https://github.com/winetricks/winetricks/archive/9006a3663212c11cd2c491c47cd9d95ba38fe29c.tar.gz",
-      "hash": "sha256-GWxecTWlBdly4z2IoAu2G8ZgI6trCjCNjFf8aVN0MKU="
+      "revision": "5a543dbc7bcb2465f3fb77bcfb28c0fc21d508b5",
+      "url": "https://github.com/winetricks/winetricks/archive/5a543dbc7bcb2465f3fb77bcfb28c0fc21d508b5.tar.gz",
+      "hash": "sha256-05AAQMv5vUCP8x69AMxnOC+NW/AH7tHzBOGQJk5uPyo="
     }
   },
   "version": 6

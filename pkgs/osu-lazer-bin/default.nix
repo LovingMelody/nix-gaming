@@ -5,7 +5,7 @@
   makeWrapper,
   symlinkJoin,
   gamemode,
-  pipewire_latency ? "64/48000", # reasonable default
+  pipewire_latency ? "64/44100", # reasonable default
   gmrun_enable ? true, # keep this flag for compatibility
   command_prefix ?
     if gmrun_enable
@@ -48,7 +48,7 @@
         ''
       }
 
-      install -m 444 -D ${contents}/osu!.desktop -t $out/share/applications
+      install -m 444 -D ${contents}/osu!.desktop $out/share/applications/osu-lazer.desktop
       for i in 16 32 48 64 96 128 256 512 1024; do
         install -D ${contents}/osu.png $out/share/icons/hicolor/''${i}x$i/apps/osu.png
       done
